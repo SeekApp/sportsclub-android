@@ -3,10 +3,13 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="app/src/main/res/layout/act_main.xml" value="0.1265625" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.1956521739130435" />
         <entry key="app/src/main/res/layout/activity_nearby_me.xml" value="0.37604166666666666" />
         <entry key="app/src/main/res/layout/activity_sportman_detail.xml" value="0.20742753623188406" />
+        <entry key="app/src/main/res/layout/fragment_nearby_me.xml" value="0.12916666666666668" />
         <entry key="app/src/main/res/layout/item_nearby_user.xml" value="0.11875" />
+        <entry key="app/src/main/res/menu/menu_bottom_nav.xml" value="0.1265625" />
       </map>
     </option>
   </component>
