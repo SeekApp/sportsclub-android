@@ -41,8 +41,8 @@ class NearbyMeFragment : Fragment() {
         viewModel.nearbyMe.observe(viewLifecycleOwner){
             when(it){
                 is NearbyViewModel.NearbyMeListUIState.Success -> {
-                    Log.i("TAG", "success nearby list")
-                    Log.i("TAG", it.data[0].name)
+                    //Log.i("TAG", "success nearby list")
+                    //Log.i("TAG", it.data[0].name)
 
                     adapter.submitList(it.data)
                 }
