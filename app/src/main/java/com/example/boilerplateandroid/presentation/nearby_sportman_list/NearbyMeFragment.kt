@@ -29,21 +29,12 @@ class NearbyMeFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
 
-
         binding = FragmentNearbyMeBinding.inflate(inflater, container, false)
 
         observerNearbyMeList()
         setupRecyclerView()
 
         return binding!!.root
-
-        //return inflater.inflate(R.layout.fragment_nearby_me, container, false)
-    }
-
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-
-
-
     }
 
     private fun observerNearbyMeList(){
