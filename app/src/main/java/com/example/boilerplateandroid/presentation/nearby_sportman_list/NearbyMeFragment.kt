@@ -19,7 +19,7 @@ import org.koin.androidx.viewmodel.ext.android.viewModel
 class NearbyMeFragment : Fragment() {
 
     private var binding: FragmentNearbyMeBinding? = null
-    private val viewModel : NearbyViewModel by viewModel()
+    private val viewModel: NearbyViewModel by viewModel()
     private lateinit var adapter: NearbyAdapter
 
     override fun onCreateView(
@@ -30,15 +30,18 @@ class NearbyMeFragment : Fragment() {
 
         binding = FragmentNearbyMeBinding.inflate(inflater, container, false)
 
+
+
         observerNearbyMeList()
         setupRecyclerView()
 
         return binding!!.root
     }
 
-    private fun observerNearbyMeList(){
-        viewModel.nearbyMe.observe(viewLifecycleOwner){
-            when(it){
+
+    private fun observerNearbyMeList() {
+        viewModel.nearbyMe.observe(viewLifecycleOwner) {
+            when (it) {
                 is NearbyViewModel.NearbyMeListUIState.Success -> {
                     //Log.i("TAG", "success nearby list")
                     //Log.i("TAG", it.data[0].name)
@@ -49,7 +52,7 @@ class NearbyMeFragment : Fragment() {
         }
     }
 
-    private fun setupRecyclerView(){
+    private fun setupRecyclerView() {
         adapter = NearbyAdapter {
             Log.i(TAG, "on click $it")
             val intent = Intent(context, SportsmanDetailsActivity::class.java)
