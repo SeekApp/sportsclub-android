@@ -12,36 +12,28 @@ import kotlinx.coroutines.launch
 
 class SportsmanDetailsViewModel(
     private val repository: SportsmanDetailsRepository
-) : ViewModel(){
+) : ViewModel() {
 
     private val _sportsmanDetail: MutableLiveData<SportsmanDetailUIState> = MutableLiveData()
     val sportsmanDetail: LiveData<SportsmanDetailUIState> = _sportsmanDetail
 
-    init {
-        getSportsmanDetails()
-    }
-
-    private fun getSportsmanDetails() = viewModelScope.launch{
-        safeFetchSportsmanDetails()
-    }
-
-    private suspend fun safeFetchSportsmanDetails(){
+    suspend fun safeFetchSportsmanDetails(id: String) {
 
         runCatching {
-            repository.fetchSportsmanDetails()
+            repository.fetchSportsmanDetails(id)
         }.onSuccess {
 
-            if (it is NetworkResult.Success){
-
+            if (it is NetworkResult.Success) {
+                _sportsmanDetail.postValue(SportsmanDetailUIState.Success(it.data))
             }
 
             Log.i("TAG", "success")
         }.onFailure {
-            Log.i("TAG", "success")
+            Log.i("TAG", "failure")
         }
     }
 
-    sealed interface SportsmanDetailUIState{
+    sealed interface SportsmanDetailUIState {
         object Loading : SportsmanDetailUIState
         data class Error(val error: Throwable) : SportsmanDetailUIState
         data class Success(val data: Sportsman) : SportsmanDetailUIState

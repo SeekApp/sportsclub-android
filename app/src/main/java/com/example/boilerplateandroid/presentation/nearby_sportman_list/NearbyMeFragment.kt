@@ -22,7 +22,6 @@ class NearbyMeFragment : Fragment() {
     private val viewModel : NearbyViewModel by viewModel()
     private lateinit var adapter: NearbyAdapter
 
-
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,

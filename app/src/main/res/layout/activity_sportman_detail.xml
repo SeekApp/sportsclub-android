@@ -9,7 +9,7 @@
         android:id="@+id/txtSportmanName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="HELLO"
+        tools:text="Hello"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintTop_toTopOf="parent"

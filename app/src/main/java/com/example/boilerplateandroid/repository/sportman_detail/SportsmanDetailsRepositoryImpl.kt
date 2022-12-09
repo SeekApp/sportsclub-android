@@ -11,8 +11,8 @@ class SportsmanDetailsRepositoryImpl(
     private val mapper: SportsmanResponseToModelMapper
 ) : SportsmanDetailsRepository{
 
-    override suspend fun fetchSportsmanDetails(): NetworkResult<Sportsman> {
-        val response = api.fetchSportsmanById()
+    override suspend fun fetchSportsmanDetails(userId: String): NetworkResult<Sportsman> {
+        val response = api.fetchSportsmanById(userId)
         val sportsman = mapper.transformToMapper(response)
 
         return NetworkResult.Success(sportsman)
